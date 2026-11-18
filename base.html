@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ title or "AI Car Concept Lab" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>window.HCAPTCHA_SITE_KEY = "{{ hcaptcha_site_key or '' }}";</script>
+    <script src="https://js.hcaptcha.com/1/api.js?render=explicit&onload=hcaptchaReady" async defer></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="{{ url_for('index') }}">AI Car Concept Lab</a>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('studio') }}">Studio</a>
+            <a href="{{ url_for('history') }}">History</a>
+        </nav>
+    </header>
+    <main class="page">{% block content %}{% endblock %}</main>
+</body>
+
+</html>
